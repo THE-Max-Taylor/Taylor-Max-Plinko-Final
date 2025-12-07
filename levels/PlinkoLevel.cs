@@ -5,7 +5,7 @@ using System.ComponentModel;
 public partial class PlinkoLevel : Node2D
 {
 	// this is the value of the current round's score
-	public int Score = 0;
+	public int Score = 10000;
 
 	[Export]
 	public Label ScoreValue;
