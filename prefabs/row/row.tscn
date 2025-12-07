@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca3o3a5grroel"]
+
+[ext_resource type="PackedScene" uid="uid://bg32xjkrgnuqo" path="res://prefabs/peg/peg.tscn" id="1_pugkt"]
+
+[node name="Row" type="Node2D"]
+
+[node name="Peg" parent="." instance=ExtResource("1_pugkt")]
+
+[node name="Peg2" parent="." instance=ExtResource("1_pugkt")]
+position = Vector2(64, 0)
+
+[node name="Peg3" parent="." instance=ExtResource("1_pugkt")]
+position = Vector2(128, 0)
+
+[node name="Peg4" parent="." instance=ExtResource("1_pugkt")]
+position = Vector2(192, 0)
+
+[node name="Peg5" parent="." instance=ExtResource("1_pugkt")]
+position = Vector2(256, 0)
+
+[node name="Peg6" parent="." instance=ExtResource("1_pugkt")]
+position = Vector2(320, 0)
+
+[node name="Peg7" parent="." instance=ExtResource("1_pugkt")]
+position = Vector2(384, 0)
+
+[node name="Peg8" parent="." instance=ExtResource("1_pugkt")]
+position = Vector2(448, 0)

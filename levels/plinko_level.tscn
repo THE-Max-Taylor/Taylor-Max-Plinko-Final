@@ -1,0 +1,249 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyy8uc4m1fvy6"]
+
+[ext_resource type="PackedScene" uid="uid://ca3o3a5grroel" path="res://prefabs/row/row.tscn" id="1_ahvb8"]
+[ext_resource type="Script" uid="uid://c6ids5c1qtj8g" path="res://levels/PlinkoLevel.cs" id="1_lxrb4"]
+[ext_resource type="PackedScene" uid="uid://skwohdfq4xw0" path="res://prefabs/wall_piece/wall_piece.tscn" id="2_ndf8e"]
+[ext_resource type="Script" uid="uid://dxvjrvhwkml4f" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="3_hhynp"]
+[ext_resource type="PackedScene" uid="uid://cdygi6j0dadwx" path="res://prefabs/player/player.tscn" id="4_20e0n"]
+[ext_resource type="PackedScene" uid="uid://byfflpg32m2op" path="res://prefabs/bucket/bucket.tscn" id="4_o0fae"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_20e0n"]
+bounce = 0.36
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndf8e"]
+size = Vector2(650, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhynp"]
+size = Vector2(20, 140)
+
+[node name="PlinkoLevel" type="Node2D" node_paths=PackedStringArray("ScoreValue", "RespawnMessage", "PlayerDisks", "GameCamera", "FirstPlayer")]
+script = ExtResource("1_lxrb4")
+ScoreValue = NodePath("CanvasLayer/ScoreValue")
+RespawnMessage = NodePath("CanvasLayer/RespawnMessage")
+PlayerScene = ExtResource("4_20e0n")
+PlayerDisks = NodePath("PlayerDisks")
+GameCamera = NodePath("Camera2D")
+FirstPlayer = NodePath("PlayerDisks/Player")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(313, 425)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreValue" type="Label" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 39.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Score: 0"
+
+[node name="RespawnMessage" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -181.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 39.0
+grow_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Left Click to Respawn"
+
+[node name="Pegs" type="Node2D" parent="."]
+
+[node name="Row1" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(55, 256)
+
+[node name="Row2" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(87, 320)
+
+[node name="Row3" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(55, 384)
+
+[node name="Row4" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(87, 448)
+
+[node name="Row5" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(55, 512)
+
+[node name="Row6" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(87, 576)
+
+[node name="Row7" parent="Pegs" instance=ExtResource("1_ahvb8")]
+position = Vector2(55, 640)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="VerticalWall1" type="Node2D" parent="Walls"]
+position = Vector2(0, 256)
+
+[node name="WallPiece" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece2" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 128)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece3" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 256)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece4" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 384)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="VerticalWall3" type="Node2D" parent="Walls"]
+position = Vector2(0, -264)
+
+[node name="WallPiece" parent="Walls/VerticalWall3" instance=ExtResource("2_ndf8e")]
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece2" parent="Walls/VerticalWall3" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 128)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece3" parent="Walls/VerticalWall3" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 256)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece4" parent="Walls/VerticalWall3" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 384)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="VerticalWall2" type="Node2D" parent="Walls"]
+position = Vector2(624, 256)
+
+[node name="WallPiece" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece2" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 128)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece3" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 256)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece4" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 384)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="VerticalWall4" type="Node2D" parent="Walls"]
+position = Vector2(624, -264)
+
+[node name="WallPiece" parent="Walls/VerticalWall4" instance=ExtResource("2_ndf8e")]
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece2" parent="Walls/VerticalWall4" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 128)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece3" parent="Walls/VerticalWall4" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 256)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece4" parent="Walls/VerticalWall4" instance=ExtResource("2_ndf8e")]
+position = Vector2(0, 384)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="BottomRegion" type="Node2D" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="BottomRegion"]
+position = Vector2(314, 840)
+physics_material_override = SubResource("PhysicsMaterial_20e0n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Floor"]
+shape = SubResource("RectangleShape2D_ndf8e")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Floor"]
+script = ExtResource("3_hhynp")
+size = Vector2(650, 20)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Wall1" type="StaticBody2D" parent="BottomRegion"]
+position = Vector2(0, 768)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Wall1"]
+shape = SubResource("RectangleShape2D_hhynp")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Wall1"]
+script = ExtResource("3_hhynp")
+size = Vector2(20, 140)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Wall2" type="StaticBody2D" parent="BottomRegion"]
+position = Vector2(627, 768)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Wall2"]
+shape = SubResource("RectangleShape2D_hhynp")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Wall2"]
+script = ExtResource("3_hhynp")
+size = Vector2(20, 140)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="ScoreBuckets" type="Node2D" parent="."]
+
+[node name="Bucket" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(40, 784)
+BucketScore = 100
+PlinkoLevelNode = NodePath("../..")
+
+[node name="Bucket2" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(128, 784)
+BucketScore = 500
+PlinkoLevelNode = NodePath("../..")
+
+[node name="Bucket3" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(216, 784)
+BucketScore = 1000
+PlinkoLevelNode = NodePath("../..")
+
+[node name="Bucket4" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(312, 784)
+BucketScore = 5000
+PlinkoLevelNode = NodePath("../..")
+
+[node name="Bucket5" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(408, 784)
+BucketScore = 1000
+PlinkoLevelNode = NodePath("../..")
+
+[node name="Bucket6" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(496, 784)
+BucketScore = 500
+PlinkoLevelNode = NodePath("../..")
+
+[node name="Bucket7" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(584, 784)
+BucketScore = 100
+PlinkoLevelNode = NodePath("../..")
+
+[node name="PlayerDisks" type="Node2D" parent="."]
+
+[node name="Player" parent="PlayerDisks" node_paths=PackedStringArray("GameCamera") instance=ExtResource("4_20e0n")]
+position = Vector2(302, -529)
+GameCamera = NodePath("../../Camera2D")

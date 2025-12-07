@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://byfflpg32m2op"]
+
+[ext_resource type="Script" uid="uid://dxvjrvhwkml4f" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="1_t4nab"]
+[ext_resource type="Script" uid="uid://dufx5tjqmxxj2" path="res://prefabs/bucket/Bucket.cs" id="1_yr506"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20e0n"]
+size = Vector2(70, 100)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yr506"]
+bounce = 0.67
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yr506"]
+size = Vector2(30, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4nab"]
+size = Vector2(21, 21)
+
+[node name="Bucket" type="Area2D"]
+script = ExtResource("1_yr506")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_20e0n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(50, 0)
+physics_material_override = SubResource("PhysicsMaterial_yr506")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_yr506")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+shape = SubResource("RectangleShape2D_t4nab")
+
+[node name="Rectangle" type="Node2D" parent="StaticBody2D"]
+script = ExtResource("1_t4nab")
+size = Vector2(30, 112)
+corner_radius = 0.0
+fill_color = Color(0.62, 0.9430001, 1, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle2" type="Node2D" parent="StaticBody2D"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+script = ExtResource("1_t4nab")
+size = Vector2(21, 21)
+corner_radius = 0.0
+fill_color = Color(0.62, 0.9430001, 1, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="ScoreLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -35.0
+offset_top = 46.0
+offset_right = 35.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.14749992, 1, 0.06999999, 1)
+theme_override_constants/outline_size = 3
+text = "99"
+horizontal_alignment = 1

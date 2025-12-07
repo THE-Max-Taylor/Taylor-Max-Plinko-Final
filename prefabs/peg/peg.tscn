@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg32xjkrgnuqo"]
+
+[ext_resource type="Script" uid="uid://b375m4oqxfkxv" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="1_oc00n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ndf8e"]
+radius = 5.0
+
+[node name="Peg" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ndf8e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(3, 0, 1, -6, -3, 0, 0, 1)
+
+[node name="Ellipse" type="Node2D" parent="."]
+script = ExtResource("1_oc00n")
+size = Vector2(10, 10)
+fill_color = Color(0, 1, 0.1833334, 1)
+metadata/_custom_type_script = "uid://b375m4oqxfkxv"

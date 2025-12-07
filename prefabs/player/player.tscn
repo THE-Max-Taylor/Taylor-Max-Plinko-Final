@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdygi6j0dadwx"]
+
+[ext_resource type="Script" uid="uid://biv13wuvk0g1i" path="res://prefabs/player/Player.cs" id="1_rdx4y"]
+[ext_resource type="Script" uid="uid://b375m4oqxfkxv" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="1_sxsrd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sxsrd"]
+bounce = 0.7
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o0fae"]
+radius = 15.0
+
+[node name="Player" type="RigidBody2D" groups=["player"]]
+physics_material_override = SubResource("PhysicsMaterial_sxsrd")
+script = ExtResource("1_rdx4y")
+
+[node name="Ellipse" type="Node2D" parent="."]
+script = ExtResource("1_sxsrd")
+size = Vector2(30, 30)
+metadata/_custom_type_script = "uid://b375m4oqxfkxv"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_o0fae")
