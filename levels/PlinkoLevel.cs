@@ -5,7 +5,7 @@ using System.ComponentModel;
 public partial class PlinkoLevel : Node2D
 {
 	// this is the value of the current round's score
-	public int Score = 10000;
+	public int Score = 0;
 
 	[Export]
 	public Label ScoreValue;
@@ -34,6 +34,7 @@ public partial class PlinkoLevel : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		Score = 26;
 
 		RespawnMessage.Hide();
 
