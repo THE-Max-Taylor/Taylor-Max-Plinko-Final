@@ -629,6 +629,11 @@ position = Vector2(151.00002, 1246.0001)
 rotation = 0.3577925
 scale = Vector2(0.405, 0.405)
 
+[node name="RowLow12" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
+position = Vector2(238, 1295.0001)
+rotation = -0.7417649
+scale = Vector2(0.405, 0.405)
+
 [node name="RowLow10" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
 position = Vector2(84, 2246)
 rotation = -0.97563905

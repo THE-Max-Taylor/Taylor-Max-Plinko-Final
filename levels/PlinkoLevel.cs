@@ -25,16 +25,18 @@ public partial class PlinkoLevel : Node2D
 	[Export]
 	public Player FirstPlayer;
 
+    //adding random difficulties
+    int[] plinkoDifficulto = [10000, 7000, 3000];
 
-	// internal variables
+    // internal variables
     bool EnableRespawn = false;
 	Vector2 InitialPosition;
 
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-	{
-		Score = 10000;
+	{		
+		Score = plinkoDifficulto[2];
 
 		RespawnMessage.Hide();
 
@@ -55,6 +57,12 @@ public partial class PlinkoLevel : Node2D
 			SpawnNewPlayer();
 
 			EnableRespawn = false;
+        }
+
+		//changes the difficulty depending on player input. this isn't an innuendo. leave me alone.
+        if (Input.IsActionJustPressed("make_Hard"))
+		{
+            Score = plinkoDifficulto[1];
         }
     }
 
