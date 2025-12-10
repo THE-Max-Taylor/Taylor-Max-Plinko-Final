@@ -62,7 +62,7 @@ public partial class PlinkoLevel : Node2D
 		//changes the difficulty depending on player input. this isn't an innuendo. leave me alone.
         if (Input.IsActionJustPressed("make_Hard"))
 		{
-            Score = plinkoDifficulto[1];
+            Score = plinkoDifficulto[3];
         }
     }
 
