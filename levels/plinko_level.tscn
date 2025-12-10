@@ -595,6 +595,38 @@ scale = Vector2(1.57, 1.57)
 position = Vector2(93, 1253)
 scale = Vector2(0.595, 0.595)
 
+[node name="LowerEllipse37" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(167, 1010.99994)
+scale = Vector2(0.52, 0.52)
+
+[node name="LowerEllipse39" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(369, 1839.0001)
+scale = Vector2(0.385, 0.385)
+
+[node name="LowerEllipse40" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(313, 1851)
+scale = Vector2(0.295, 0.295)
+
+[node name="LowerEllipse41" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(186, 1690)
+scale = Vector2(0.295, 0.295)
+
+[node name="LowerEllipse42" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(210, 2362)
+scale = Vector2(0.295, 0.295)
+
+[node name="LowerEllipse43" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(315, 2244)
+scale = Vector2(0.295, 0.295)
+
+[node name="LowerEllipse44" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(41, 2205)
+scale = Vector2(0.295, 0.295)
+
+[node name="LowerEllipse38" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(147, 1779)
+scale = Vector2(0.45, 0.45)
+
 [node name="LowerEllipse" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
 position = Vector2(200, 138)
 
@@ -711,6 +743,11 @@ scale = Vector2(0.465, 0.465)
 position = Vector2(45, 114)
 scale = Vector2(0.975, 1.06)
 
+[node name="RowLow13" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
+position = Vector2(494, 2383.0002)
+rotation = 0.6091199
+scale = Vector2(0.195, 0.211)
+
 [node name="RowLow2" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
 position = Vector2(87, 215)
 scale = Vector2(0.93, 1)
@@ -727,8 +764,8 @@ position = Vector2(71, 481)
 scale = Vector2(0.92, 0.92)
 
 [node name="RowLow9" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
-position = Vector2(283.99994, 1892)
-rotation = 0.7330383
+position = Vector2(324.00006, 1889)
+rotation = 0.9512044
 scale = Vector2(0.46, 0.46)
 
 [node name="RowLow11" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
@@ -742,9 +779,9 @@ rotation = -0.7417649
 scale = Vector2(0.405, 0.405)
 
 [node name="RowLow10" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
-position = Vector2(84, 2246)
+position = Vector2(367.99994, 2254.9998)
 rotation = -0.97563905
-scale = Vector2(0.385, 0.385)
+scale = Vector2(0.235, 0.235)
 
 [node name="RowLow6" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
 position = Vector2(41, 519)
