@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqcvsyhet1pd"]
+
+[ext_resource type="Script" uid="uid://dxvjrvhwkml4f" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="1_b126i"]
+
+[node name="Death Symbol 1" type="Node2D"]
+
+[node name="Rectangle" type="Node2D" parent="."]
+position = Vector2(32.999977, 1722.0001)
+rotation = -0.65449846
+scale = Vector2(0.315, 0.095)
+script = ExtResource("1_b126i")
+size = Vector2(22.891235, 550.3535)
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle2" type="Node2D" parent="."]
+position = Vector2(32.999977, 1722.0001)
+rotation = -2.485349
+scale = Vector2(0.315, 0.095)
+script = ExtResource("1_b126i")
+size = Vector2(22.891235, 550.3535)
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"

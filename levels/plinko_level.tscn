@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyy8uc4m1fvy6"]
+[gd_scene load_steps=20 format=3 uid="uid://cyy8uc4m1fvy6"]
 
 [ext_resource type="PackedScene" uid="uid://ca3o3a5grroel" path="res://prefabs/row/row.tscn" id="1_ahvb8"]
 [ext_resource type="Script" uid="uid://c6ids5c1qtj8g" path="res://levels/PlinkoLevel.cs" id="1_lxrb4"]
@@ -6,6 +6,10 @@
 [ext_resource type="Script" uid="uid://dxvjrvhwkml4f" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="3_hhynp"]
 [ext_resource type="PackedScene" uid="uid://cdygi6j0dadwx" path="res://prefabs/player/player.tscn" id="4_20e0n"]
 [ext_resource type="PackedScene" uid="uid://byfflpg32m2op" path="res://prefabs/bucket/bucket.tscn" id="4_o0fae"]
+[ext_resource type="PackedScene" uid="uid://dg0p4ktknqq8e" path="res://prefabs/LowerEllipse/LowerEllipse.tscn" id="7_r2c0j"]
+[ext_resource type="PackedScene" uid="uid://dwqfivk8lqiw5" path="res://prefabs/RowLow/row_low.tscn" id="8_ql3yk"]
+[ext_resource type="PackedScene" uid="uid://cg048ynw48368" path="res://prefabs/LowerWall/LowerWall.tscn" id="9_ql3yk"]
+[ext_resource type="PackedScene" uid="uid://cqcvsyhet1pd" path="res://prefabs/MurderSymbol/death_symbol_1.tscn" id="10_hve32"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_20e0n"]
 bounce = 0.36
@@ -16,6 +20,24 @@ size = Vector2(650, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hhynp"]
 size = Vector2(20, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxrb4"]
+size = Vector2(27.19244, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lxrb4"]
+bounce = 0.67
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al8p8"]
+size = Vector2(30, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2c0j"]
+size = Vector2(21, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ql3yk"]
+size = Vector2(276.76648, 18.832514)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hve32"]
 
 [node name="PlinkoLevel" type="Node2D" node_paths=PackedStringArray("ScoreValue", "RespawnMessage", "PlayerDisks", "GameCamera", "FirstPlayer")]
 script = ExtResource("1_lxrb4")
@@ -38,7 +60,7 @@ offset_right = 64.0
 offset_bottom = 39.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-text = "Score: 0"
+text = "Score: 10000"
 
 [node name="RespawnMessage" type="Label" parent="CanvasLayer"]
 anchors_preset = 1
@@ -95,11 +117,6 @@ position = Vector2(0, 256)
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
 
-[node name="WallPiece4" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 384)
-rotation = 0.7853982
-scale = Vector2(0.99999994, 0.99999994)
-
 [node name="VerticalWall3" type="Node2D" parent="Walls"]
 position = Vector2(0, -264)
 
@@ -140,9 +157,9 @@ rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="WallPiece4" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 384)
-rotation = 0.7853982
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(2, 384.99994)
+rotation = 1.553343
+scale = Vector2(1.17, 0.205)
 
 [node name="VerticalWall4" type="Node2D" parent="Walls"]
 position = Vector2(624, -264)
@@ -166,10 +183,16 @@ position = Vector2(0, 384)
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
 
+[node name="WallPiece4" parent="Walls" instance=ExtResource("2_ndf8e")]
+position = Vector2(-1.1920929e-07, 640.00006)
+rotation = 1.5707964
+scale = Vector2(1.17, 0.205)
+
 [node name="BottomRegion" type="Node2D" parent="."]
 
 [node name="Floor" type="StaticBody2D" parent="BottomRegion"]
-position = Vector2(314, 840)
+position = Vector2(182, 839)
+scale = Vector2(0.3, 1)
 physics_material_override = SubResource("PhysicsMaterial_20e0n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Floor"]
@@ -205,44 +228,525 @@ size = Vector2(20, 140)
 corner_radius = 0.0
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
-[node name="ScoreBuckets" type="Node2D" parent="."]
+[node name="Floor2" type="StaticBody2D" parent="BottomRegion"]
+position = Vector2(447, 839)
+scale = Vector2(0.31, 1)
+physics_material_override = SubResource("PhysicsMaterial_20e0n")
 
-[node name="Bucket" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
-position = Vector2(40, 784)
-BucketScore = 100
-PlinkoLevelNode = NodePath("../..")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Floor2"]
+shape = SubResource("RectangleShape2D_ndf8e")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Floor2"]
+script = ExtResource("3_hhynp")
+size = Vector2(650, 20)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Directors" type="Node2D" parent="BottomRegion"]
+
+[node name="Wall Director 1" type="StaticBody2D" parent="BottomRegion/Directors"]
+position = Vector2(21, 60)
+scale = Vector2(0.945, 0.94)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Directors/Wall Director 1"]
+position = Vector2(253.73131, 923.00006)
+scale = Vector2(1.48, 7.485)
+shape = SubResource("RectangleShape2D_lxrb4")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Directors/Wall Director 1"]
+position = Vector2(252.73633, 913.00006)
+scale = Vector2(0.41, 1.69)
+script = ExtResource("3_hhynp")
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Wall Director 2" type="StaticBody2D" parent="BottomRegion/Directors"]
+position = Vector2(133, 82.99999)
+scale = Vector2(0.92, 0.915)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Directors/Wall Director 2"]
+position = Vector2(253.73131, 923.00006)
+scale = Vector2(1.48, 7.485)
+shape = SubResource("RectangleShape2D_lxrb4")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Directors/Wall Director 2"]
+position = Vector2(252.73633, 913.00006)
+scale = Vector2(0.41, 1.69)
+script = ExtResource("3_hhynp")
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Lower Reaches" type="Node2D" parent="BottomRegion"]
+
+[node name="Buckets" type="Node2D" parent="BottomRegion/Lower Reaches"]
+
+[node name="BucketDownDeep" parent="BottomRegion/Lower Reaches/Buckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(594, 2155)
+scale = Vector2(0.735, 1.455)
+BucketScore = -100
+PlinkoLevelNode = NodePath("../../../..")
+
+[node name="BucketDownDeep2" parent="BottomRegion/Lower Reaches/Buckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(40.000008, 2768)
+rotation = 3.1189034
+scale = Vector2(0.955, 1.61)
+BucketScore = -100
+PlinkoLevelNode = NodePath("../../../..")
+
+[node name="BucketDownDeep3" parent="BottomRegion/Lower Reaches/Buckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(595.99994, 2698)
+rotation = 0.017453292
+scale = Vector2(0.6650001, 1.24)
+BucketScore = -100
+PlinkoLevelNode = NodePath("../../../..")
+
+[node name="BucketDownDeep5" parent="BottomRegion/Lower Reaches/Buckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(196.00005, 2114)
+rotation = 0.30543262
+scale = Vector2(0.67999995, 0.67999995)
+BucketScore = -100
+PlinkoLevelNode = NodePath("../../../..")
+
+[node name="BucketDownDeep6" parent="BottomRegion/Lower Reaches/Buckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(478.0001, 2443.0002)
+rotation = -2.7750735
+scale = Vector2(0.6050001, 0.6050001)
+BucketScore = -100
+PlinkoLevelNode = NodePath("../../../..")
+
+[node name="Indie Bucket End3" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
+position = Vector2(168.00006, 2097.0002)
+rotation = 0.30543262
+scale = Vector2(0.63, 0.63)
+physics_material_override = SubResource("PhysicsMaterial_lxrb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/Indie Bucket End3"]
+shape = SubResource("RectangleShape2D_al8p8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/Indie Bucket End3"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+shape = SubResource("RectangleShape2D_r2c0j")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/Indie Bucket End3"]
+script = ExtResource("3_hhynp")
+size = Vector2(30, 112)
+corner_radius = 0.0
+fill_color = Color(0.62, 0.9430001, 1, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle2" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/Indie Bucket End3"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+script = ExtResource("3_hhynp")
+size = Vector2(21, 21)
+corner_radius = 0.0
+fill_color = Color(0.62, 0.9430001, 1, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Indie Bucket End4" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
+position = Vector2(504, 2455)
+rotation = -2.8099802
+scale = Vector2(0.63, 0.63)
+physics_material_override = SubResource("PhysicsMaterial_lxrb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/Indie Bucket End4"]
+shape = SubResource("RectangleShape2D_al8p8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/Indie Bucket End4"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+shape = SubResource("RectangleShape2D_r2c0j")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/Indie Bucket End4"]
+script = ExtResource("3_hhynp")
+size = Vector2(30, 112)
+corner_radius = 0.0
+fill_color = Color(0.62, 0.9430001, 1, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle2" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/Indie Bucket End4"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+script = ExtResource("3_hhynp")
+size = Vector2(21, 21)
+corner_radius = 0.0
+fill_color = Color(0.62, 0.9430001, 1, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Ceiling" type="StaticBody2D" parent="BottomRegion/Lower Reaches"]
+position = Vector2(-25, 1)
+scale = Vector2(1, 0.995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Ceiling"]
+position = Vector2(212, 990.9548)
+scale = Vector2(0.67, 1.26)
+shape = SubResource("RectangleShape2D_ql3yk")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Ceiling"]
+position = Vector2(206, 988.9447)
+scale = Vector2(1.725, 0.26)
+script = ExtResource("3_hhynp")
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Ceiling2" type="StaticBody2D" parent="BottomRegion/Lower Reaches"]
+position = Vector2(238, -1)
+scale = Vector2(1, 0.995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Ceiling2"]
+position = Vector2(212, 990.9548)
+scale = Vector2(0.67, 1.26)
+shape = SubResource("RectangleShape2D_ql3yk")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Ceiling2"]
+position = Vector2(206, 988.9447)
+scale = Vector2(1.725, 0.26)
+script = ExtResource("3_hhynp")
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Floor" type="StaticBody2D" parent="BottomRegion/Lower Reaches"]
+position = Vector2(53.000004, 2175)
+scale = Vector2(0.92, 0.99)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Floor"]
+position = Vector2(303.26086, 1016.1615)
+scale = Vector2(2.63, 4.17)
+shape = SubResource("RectangleShape2D_ql3yk")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Floor"]
+position = Vector2(306.5217, 1019.1918)
+scale = Vector2(7.26, 0.85)
+script = ExtResource("3_hhynp")
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Side Lower Wall2" type="StaticBody2D" parent="BottomRegion/Lower Reaches"]
+position = Vector2(-79, -51.000004)
+scale = Vector2(1, 0.995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Side Lower Wall2"]
+position = Vector2(175.00002, 964.82404)
+rotation = -1.7086773
+scale = Vector2(0.49, 0.86)
+shape = SubResource("RectangleShape2D_ql3yk")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Side Lower Wall2"]
+position = Vector2(179, 969.8492)
+rotation = -1.7086773
+scale = Vector2(1.56, 0.265)
+script = ExtResource("3_hhynp")
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Side Lower Wall3" type="StaticBody2D" parent="BottomRegion/Lower Reaches"]
+position = Vector2(355, -62.000004)
+scale = Vector2(1, 0.995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Side Lower Wall3"]
+position = Vector2(185.99997, 977.88947)
+rotation = -1.4643313
+scale = Vector2(0.54, 1.065)
+shape = SubResource("RectangleShape2D_ql3yk")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Side Lower Wall3"]
+position = Vector2(184.99998, 977.8896)
+rotation = -1.4643313
+scale = Vector2(1.725, 0.23)
+script = ExtResource("3_hhynp")
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="The Pegs" type="Node2D" parent="BottomRegion/Lower Reaches"]
+
+[node name="LowerEllipse2" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(-220.99998, -486.99994)
+scale = Vector2(1.085, 1.085)
+
+[node name="LowerEllipse3" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(183, 1343.0001)
+scale = Vector2(0.695, 0.695)
+
+[node name="LowerEllipse4" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(442, 1646)
+scale = Vector2(0.48, 0.48)
+
+[node name="LowerEllipse5" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(229.99998, 726)
+scale = Vector2(0.905, 0.905)
+
+[node name="LowerEllipse6" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(-168.99998, 747)
+scale = Vector2(0.935, 0.935)
+
+[node name="LowerEllipse7" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(30.999992, -3.0517578e-05)
+scale = Vector2(1.57, 1.57)
+
+[node name="LowerEllipse8" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(-276, -1129)
+scale = Vector2(1.57, 1.57)
+
+[node name="LowerEllipse9" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(93, 1253)
+scale = Vector2(0.595, 0.595)
+
+[node name="LowerEllipse" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(200, 138)
+
+[node name="LowerEllipse10" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(-67, 925)
+scale = Vector2(0.53, 0.53)
+
+[node name="LowerEllipse11" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(-143, 239)
+scale = Vector2(1.05, 1.05)
+
+[node name="LowerEllipse12" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(175.00002, 452)
+scale = Vector2(0.865, 0.865)
+
+[node name="LowerEllipse13" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(354.99997, 696)
+
+[node name="LowerEllipse15" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(22.000004, -1222)
+scale = Vector2(1.525, 1.525)
+
+[node name="LowerEllipse14" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(16.999996, 423.99997)
+scale = Vector2(0.425, 0.425)
+
+[node name="LowerEllipse16" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(502, 815.99994)
+scale = Vector2(0.215, 0.215)
+
+[node name="LowerEllipse17" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(372, 562.00006)
+scale = Vector2(0.35, 0.35)
+
+[node name="LowerEllipse18" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(116, 335)
+scale = Vector2(0.475, 0.475)
+
+[node name="LowerEllipse19" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(16, 868)
+scale = Vector2(0.185, 0.185)
+
+[node name="LowerEllipse20" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(98.000015, -93.00003)
+scale = Vector2(1.055, 1.055)
+
+[node name="LowerEllipse21" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(251, 1275)
+scale = Vector2(0.53, 0.53)
+
+[node name="LowerEllipse22" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(26, 1688)
+scale = Vector2(0.53, 0.53)
+
+[node name="LowerEllipse23" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(-46, 1619)
+scale = Vector2(0.675, 0.675)
+
+[node name="LowerEllipse35" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(305, 946)
+scale = Vector2(0.675, 0.675)
+
+[node name="LowerEllipse36" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(-58, 1257.9999)
+scale = Vector2(0.26, 0.26)
+
+[node name="LowerEllipse34" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(540, 1725.9999)
+scale = Vector2(0.18, 0.18)
+
+[node name="LowerEllipse24" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(140, 1800)
+scale = Vector2(0.53, 0.53)
+
+[node name="LowerEllipse25" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(41, 87.999985)
+scale = Vector2(0.8, 0.8)
+
+[node name="LowerEllipse26" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(87, 1318)
+scale = Vector2(0.64, 0.64)
+
+[node name="LowerEllipse27" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(13.999992, 745.99994)
+scale = Vector2(0.655, 0.655)
+
+[node name="LowerEllipse28" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(-48, 1594)
+scale = Vector2(0.375, 0.375)
+
+[node name="LowerEllipse29" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(324, 650)
+scale = Vector2(0.705, 0.705)
+
+[node name="LowerEllipse30" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(178, 1264)
+scale = Vector2(0.47, 0.47)
+
+[node name="LowerEllipse31" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(-60, 1303)
+scale = Vector2(0.41, 0.41)
+
+[node name="LowerEllipse32" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(-61.000008, 1748.0001)
+scale = Vector2(0.455, 0.455)
+
+[node name="LowerEllipse33" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
+position = Vector2(359.00003, 1859.0001)
+scale = Vector2(0.465, 0.465)
+
+[node name="LowerRows" type="Node2D" parent="BottomRegion/Lower Reaches"]
+
+[node name="RowLow" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
+position = Vector2(45, 114)
+scale = Vector2(0.975, 1.06)
+
+[node name="RowLow2" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
+position = Vector2(87, 215)
+scale = Vector2(0.93, 1)
+
+[node name="RowLow3" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
+position = Vector2(10, 265)
+
+[node name="RowLow4" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
+position = Vector2(117.000015, 722)
+scale = Vector2(0.765, 0.765)
+
+[node name="RowLow5" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
+position = Vector2(39, 396)
+
+[node name="RowLow6" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
+position = Vector2(63, 445)
+
+[node name="RowLow7" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
+position = Vector2(68, 2132)
+
+[node name="RowLow8" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
+position = Vector2(45, 2169)
+
+[node name="The Walls" type="Node2D" parent="BottomRegion/Lower Reaches"]
+
+[node name="WallR" parent="BottomRegion/Lower Reaches/The Walls" instance=ExtResource("9_ql3yk")]
+
+[node name="WallL2" type="StaticBody2D" parent="BottomRegion/Lower Reaches/The Walls"]
+position = Vector2(191, 2025)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/The Walls/WallL2"]
+position = Vector2(-209.99997, -1.0000534)
+scale = Vector2(2.9, 121.515)
+shape = SubResource("RectangleShape2D_hve32")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/The Walls/WallL2"]
+position = Vector2(-209.7, -22)
+scale = Vector2(0.585, 23.85)
+script = ExtResource("3_hhynp")
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="MurderSymbols" type="Node2D" parent="BottomRegion/Lower Reaches"]
+
+[node name="Death Symbol 2" parent="BottomRegion/Lower Reaches/MurderSymbols" instance=ExtResource("10_hve32")]
+position = Vector2(560, 439)
+
+[node name="Death Symbol 3" parent="BottomRegion/Lower Reaches/MurderSymbols" instance=ExtResource("10_hve32")]
+position = Vector2(7, 1046)
+
+[node name="Death Symbol 4" parent="BottomRegion/Lower Reaches/MurderSymbols" instance=ExtResource("10_hve32")]
+position = Vector2(565, 984)
+
+[node name="Death Symbol 5" parent="BottomRegion/Lower Reaches/MurderSymbols" instance=ExtResource("10_hve32")]
+position = Vector2(637, 662.00006)
+rotation = 0.31415927
+scale = Vector2(0.875, 0.875)
+
+[node name="Death Symbol 6" parent="BottomRegion/Lower Reaches/MurderSymbols" instance=ExtResource("10_hve32")]
+position = Vector2(951.99994, 1202)
+rotation = -5.899213
+scale = Vector2(0.775, 0.775)
+
+[node name="ScoreBuckets" type="Node2D" parent="."]
 
 [node name="Bucket2" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(128, 784)
-BucketScore = 500
+BucketScore = -500
 PlinkoLevelNode = NodePath("../..")
 
 [node name="Bucket3" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(216, 784)
-BucketScore = 1000
-PlinkoLevelNode = NodePath("../..")
-
-[node name="Bucket4" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
-position = Vector2(312, 784)
-BucketScore = 5000
+BucketScore = -1000
 PlinkoLevelNode = NodePath("../..")
 
 [node name="Bucket5" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
-position = Vector2(408, 784)
-BucketScore = 1000
+position = Vector2(397, 784)
+BucketScore = -1000
 PlinkoLevelNode = NodePath("../..")
 
 [node name="Bucket6" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(496, 784)
-BucketScore = 500
+BucketScore = -500
 PlinkoLevelNode = NodePath("../..")
 
-[node name="Bucket7" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
-position = Vector2(584, 784)
-BucketScore = 100
-PlinkoLevelNode = NodePath("../..")
+[node name="Indie Bucket End" type="StaticBody2D" parent="ScoreBuckets"]
+position = Vector2(359, 785)
+physics_material_override = SubResource("PhysicsMaterial_lxrb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreBuckets/Indie Bucket End"]
+shape = SubResource("RectangleShape2D_al8p8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ScoreBuckets/Indie Bucket End"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+shape = SubResource("RectangleShape2D_r2c0j")
+
+[node name="Rectangle" type="Node2D" parent="ScoreBuckets/Indie Bucket End"]
+script = ExtResource("3_hhynp")
+size = Vector2(30, 112)
+corner_radius = 0.0
+fill_color = Color(0.62, 0.9430001, 1, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle2" type="Node2D" parent="ScoreBuckets/Indie Bucket End"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+script = ExtResource("3_hhynp")
+size = Vector2(21, 21)
+corner_radius = 0.0
+fill_color = Color(0.62, 0.9430001, 1, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Indie Bucket End2" type="StaticBody2D" parent="ScoreBuckets"]
+position = Vector2(91, 782)
+physics_material_override = SubResource("PhysicsMaterial_lxrb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreBuckets/Indie Bucket End2"]
+shape = SubResource("RectangleShape2D_al8p8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ScoreBuckets/Indie Bucket End2"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+shape = SubResource("RectangleShape2D_r2c0j")
+
+[node name="Rectangle" type="Node2D" parent="ScoreBuckets/Indie Bucket End2"]
+script = ExtResource("3_hhynp")
+size = Vector2(30, 112)
+corner_radius = 0.0
+fill_color = Color(0.62, 0.9430001, 1, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle2" type="Node2D" parent="ScoreBuckets/Indie Bucket End2"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+script = ExtResource("3_hhynp")
+size = Vector2(21, 21)
+corner_radius = 0.0
+fill_color = Color(0.62, 0.9430001, 1, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="PlayerDisks" type="Node2D" parent="."]
+position = Vector2(208, 185)
 
 [node name="Player" parent="PlayerDisks" node_paths=PackedStringArray("GameCamera") instance=ExtResource("4_20e0n")]
 position = Vector2(302, -529)

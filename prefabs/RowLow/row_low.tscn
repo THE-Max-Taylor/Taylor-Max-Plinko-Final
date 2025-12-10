@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwqfivk8lqiw5"]
+
+[ext_resource type="PackedScene" uid="uid://dg0p4ktknqq8e" path="res://prefabs/LowerEllipse/LowerEllipse.tscn" id="1_nthq5"]
+
+[node name="RowLow" type="Node2D"]
+
+[node name="LowerEllipse13" parent="." instance=ExtResource("1_nthq5")]
+position = Vector2(422, 665)
+scale = Vector2(0.115, 0.115)
+
+[node name="LowerEllipse14" parent="." instance=ExtResource("1_nthq5")]
+position = Vector2(360, 664)
+scale = Vector2(0.115, 0.115)
+
+[node name="LowerEllipse15" parent="." instance=ExtResource("1_nthq5")]
+position = Vector2(296.00003, 664)
+scale = Vector2(0.115, 0.115)
+
+[node name="LowerEllipse16" parent="." instance=ExtResource("1_nthq5")]
+position = Vector2(232, 664)
+scale = Vector2(0.115, 0.115)
+
+[node name="LowerEllipse17" parent="." instance=ExtResource("1_nthq5")]
+position = Vector2(168, 664)
+scale = Vector2(0.115, 0.115)
+
+[node name="LowerEllipse18" parent="." instance=ExtResource("1_nthq5")]
+position = Vector2(104.00003, 664)
+scale = Vector2(0.115, 0.115)
+
+[node name="LowerEllipse19" parent="." instance=ExtResource("1_nthq5")]
+position = Vector2(488, 664)
+scale = Vector2(0.115, 0.115)
+
+[node name="LowerEllipse20" parent="." instance=ExtResource("1_nthq5")]
+position = Vector2(40.00003, 664)
+scale = Vector2(0.115, 0.115)
+
+[node name="LowerEllipse21" parent="." instance=ExtResource("1_nthq5")]
+position = Vector2(-23.99997, 664)
+scale = Vector2(0.115, 0.115)
