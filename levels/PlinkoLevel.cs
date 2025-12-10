@@ -47,21 +47,26 @@ public partial class PlinkoLevel : Node2D
 	{
 		// write the score to the UI
 		ScoreValue.Text = $"Ooohgg... careful.. you only have {Score} points left..";
-		RespawnMessage.Visible = EnableRespawn;
+		
 
-		// spawn a new player
-        if (Input.IsActionJustPressed("drop_disk") && EnableRespawn)
-        {
-			// spawning a new player here is OK because physics step hasn't run
-			SpawnNewPlayer();
+		if (Score > 0)
+		{
+            RespawnMessage.Visible = EnableRespawn;
 
-			EnableRespawn = false;
-        }
+            // spawn a new player
+            if (Input.IsActionJustPressed("drop_disk") && EnableRespawn)
+			{
+				// spawning a new player here is OK because physics step hasn't run
+				SpawnNewPlayer();
+
+				EnableRespawn = false;
+			}
+		}
 
 		if (Score <= 0)
 		{
             ScoreValue.Text = "Sorry, chief. It's over. You're done. We're all done. It's over. It's over.";
-            if (Input.IsActionJustPressed("drop_disk") && EnableRespawn)
+            if (Input.IsActionPressed("drop_disk"))
             {
                 ScoreValue.Text = "Didn't you hear? We're done. It's all over.";
             }
