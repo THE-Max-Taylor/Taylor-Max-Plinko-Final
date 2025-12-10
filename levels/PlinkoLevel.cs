@@ -5,7 +5,7 @@ using System.ComponentModel;
 public partial class PlinkoLevel : Node2D
 {
 	// this is the value of the current round's score
-	public int Score = 0;
+	public int Score = 7000;
 
 	[Export]
 	public Label ScoreValue;
@@ -26,7 +26,7 @@ public partial class PlinkoLevel : Node2D
 	public Player FirstPlayer;
 
     //adding random difficulties
-    int[] plinkoDifficulto = [10000, 7000, 3000];
+    //int[] plinkoDifficulto = [10000, 7000, 3000];
 
     // internal variables
     bool EnableRespawn = false;
@@ -35,8 +35,7 @@ public partial class PlinkoLevel : Node2D
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-	{		
-		Score = plinkoDifficulto[2];
+	{
 
 		RespawnMessage.Hide();
 
@@ -47,7 +46,7 @@ public partial class PlinkoLevel : Node2D
 	public override void _Process(double delta)
 	{
 		// write the score to the UI
-		ScoreValue.Text = $"Score: {Score}";
+		ScoreValue.Text = $"Ooohgg... careful.. you only have {Score} points left..";
 		RespawnMessage.Visible = EnableRespawn;
 
 		// spawn a new player
@@ -59,11 +58,16 @@ public partial class PlinkoLevel : Node2D
 			EnableRespawn = false;
         }
 
-		//changes the difficulty depending on player input. this isn't an innuendo. leave me alone.
-        if (Input.IsActionJustPressed("make_Hard"))
+		if (Score <= 0)
 		{
-            Score = plinkoDifficulto[3];
+            ScoreValue.Text = "Sorry, chief. It's over. You're done. We're all done. It's over. It's over.";
+            if (Input.IsActionJustPressed("drop_disk") && EnableRespawn)
+            {
+                ScoreValue.Text = "Didn't you hear? We're done. It's all over.";
+            }
+
         }
+
     }
 
 	void SpawnNewPlayer()

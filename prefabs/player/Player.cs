@@ -33,11 +33,22 @@ public partial class Player : RigidBody2D
 			if (Input.IsActionJustPressed("drop_disk"))
 			{
 				Freeze = false;
-			}
+           
+            }
+
 		}
 
-		// snap camera Y position to my Y position ONLY if I'm not dead
-		if (!Dead)
+		if (Position.Y >= 40)
+		{
+			//move player if A button is pressed
+			if (Input.IsActionJustPressed("move-left"))
+			{            
+               
+            }
+		}
+
+            // snap camera Y position to my Y position ONLY if I'm not dead
+            if (!Dead)
         {
             Vector2 newCamPosition = GameCamera.Position;
 

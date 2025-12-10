@@ -58,6 +58,7 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 64.0
 offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.4842382, 0.99205714, 0.78550017, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 text = "Score: 10000"
@@ -71,6 +72,7 @@ offset_top = 16.0
 offset_right = -16.0
 offset_bottom = 39.0
 grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 text = "Left Click to Respawn"
@@ -283,35 +285,35 @@ metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 [node name="BucketDownDeep" parent="BottomRegion/Lower Reaches/Buckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(594, 2155)
 scale = Vector2(0.735, 1.455)
-BucketScore = -100
+BucketScore = -1000
 PlinkoLevelNode = NodePath("../../../..")
 
 [node name="BucketDownDeep2" parent="BottomRegion/Lower Reaches/Buckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(40.000008, 2768)
 rotation = 3.1189034
 scale = Vector2(0.955, 1.61)
-BucketScore = -100
+BucketScore = -1000
 PlinkoLevelNode = NodePath("../../../..")
 
 [node name="BucketDownDeep3" parent="BottomRegion/Lower Reaches/Buckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(595.99994, 2698)
 rotation = 0.017453292
 scale = Vector2(0.6650001, 1.24)
-BucketScore = -100
+BucketScore = -1000
 PlinkoLevelNode = NodePath("../../../..")
 
 [node name="BucketDownDeep5" parent="BottomRegion/Lower Reaches/Buckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(196.00005, 2114)
 rotation = 0.30543262
 scale = Vector2(0.67999995, 0.67999995)
-BucketScore = -100
+BucketScore = -1000
 PlinkoLevelNode = NodePath("../../../..")
 
 [node name="BucketDownDeep6" parent="BottomRegion/Lower Reaches/Buckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(478.0001, 2443.0002)
 rotation = -2.7750735
 scale = Vector2(0.6050001, 0.6050001)
-BucketScore = -100
+BucketScore = -1000
 PlinkoLevelNode = NodePath("../../../..")
 
 [node name="Indie Bucket End3" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
@@ -625,9 +627,9 @@ rotation = 0.7330383
 scale = Vector2(0.46, 0.46)
 
 [node name="RowLow11" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
-position = Vector2(151.00002, 1246.0001)
-rotation = 0.3577925
-scale = Vector2(0.405, 0.405)
+position = Vector2(160, 1332)
+rotation = 0.47996554
+scale = Vector2(0.345, 0.345)
 
 [node name="RowLow12" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
 position = Vector2(238, 1295.0001)
@@ -688,6 +690,38 @@ scale = Vector2(0.875, 0.875)
 position = Vector2(951.99994, 1202)
 rotation = -5.899213
 scale = Vector2(0.775, 0.775)
+
+[node name="LowestBuckets" type="Node2D" parent="BottomRegion/Lower Reaches"]
+
+[node name="Bucket6" parent="BottomRegion/Lower Reaches/LowestBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(539, 3117)
+scale = Vector2(1.22, 0.52)
+BucketScore = -3000
+PlinkoLevelNode = NodePath("../../../..")
+
+[node name="Bucket10" parent="BottomRegion/Lower Reaches/LowestBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(293.99997, 3092.9998)
+scale = Vector2(1.83, 0.97)
+BucketScore = 10000000
+PlinkoLevelNode = NodePath("../../../..")
+
+[node name="Bucket9" parent="BottomRegion/Lower Reaches/LowestBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(165, 3117.0002)
+scale = Vector2(0.97, 0.54)
+BucketScore = -1000
+PlinkoLevelNode = NodePath("../../../..")
+
+[node name="Bucket7" parent="BottomRegion/Lower Reaches/LowestBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(55.00003, 3116)
+scale = Vector2(1.22, 0.52)
+BucketScore = -3000
+PlinkoLevelNode = NodePath("../../../..")
+
+[node name="Bucket8" parent="BottomRegion/Lower Reaches/LowestBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+position = Vector2(438.00003, 3117)
+scale = Vector2(0.925, 0.555)
+BucketScore = -1000
+PlinkoLevelNode = NodePath("../../../..")
 
 [node name="ScoreBuckets" type="Node2D" parent="."]
 

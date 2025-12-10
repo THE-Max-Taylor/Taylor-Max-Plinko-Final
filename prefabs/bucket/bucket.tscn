@@ -38,7 +38,7 @@ shape = SubResource("RectangleShape2D_t4nab")
 script = ExtResource("1_t4nab")
 size = Vector2(30, 112)
 corner_radius = 0.0
-fill_color = Color(0.62, 0.9430001, 1, 1)
+fill_color = Color(1, 0.19215687, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Rectangle2" type="Node2D" parent="StaticBody2D"]
@@ -47,7 +47,7 @@ rotation = 0.7853982
 script = ExtResource("1_t4nab")
 size = Vector2(21, 21)
 corner_radius = 0.0
-fill_color = Color(0.62, 0.9430001, 1, 1)
+fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="ScoreLabel" type="Label" parent="."]
