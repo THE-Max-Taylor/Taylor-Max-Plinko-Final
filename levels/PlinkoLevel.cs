@@ -34,6 +34,8 @@ public partial class PlinkoLevel : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		Score = 26;
+
 		RespawnMessage.Hide();
 
 		InitialPosition = FirstPlayer.Position;
