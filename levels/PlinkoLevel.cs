@@ -49,7 +49,7 @@ public partial class PlinkoLevel : Node2D
 		ScoreValue.Text = $"Ooohgg... careful.. you only have {Score} points left..";
 		
 
-		if (Score > 0)
+		if (Score > 0 && Score < 70001)
 		{
             RespawnMessage.Visible = EnableRespawn;
 
@@ -71,6 +71,11 @@ public partial class PlinkoLevel : Node2D
                 ScoreValue.Text = "Didn't you hear? We're done. It's all over.";
             }
 
+        }
+
+		if (Score > 70001)
+		{
+            ScoreValue.Text = "Sorr- Yo, what? Wait what? YOU WIN!! NICE. NICE.";
         }
 
     }

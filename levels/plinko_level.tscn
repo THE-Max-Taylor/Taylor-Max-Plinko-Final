@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cyy8uc4m1fvy6"]
+[gd_scene load_steps=21 format=3 uid="uid://cyy8uc4m1fvy6"]
 
 [ext_resource type="PackedScene" uid="uid://ca3o3a5grroel" path="res://prefabs/row/row.tscn" id="1_ahvb8"]
 [ext_resource type="Script" uid="uid://c6ids5c1qtj8g" path="res://levels/PlinkoLevel.cs" id="1_lxrb4"]
@@ -33,6 +33,9 @@ size = Vector2(30, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r2c0j"]
 size = Vector2(21, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exmio"]
+size = Vector2(19.338516, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ql3yk"]
 size = Vector2(276.76648, 18.832514)
@@ -334,7 +337,7 @@ shape = SubResource("RectangleShape2D_r2c0j")
 script = ExtResource("3_hhynp")
 size = Vector2(30, 112)
 corner_radius = 0.0
-fill_color = Color(0.62, 0.9430001, 1, 1)
+fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Rectangle2" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/Indie Bucket End3"]
@@ -343,7 +346,7 @@ rotation = 0.7853982
 script = ExtResource("3_hhynp")
 size = Vector2(21, 21)
 corner_radius = 0.0
-fill_color = Color(0.62, 0.9430001, 1, 1)
+fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Indie Bucket End4" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
@@ -364,7 +367,7 @@ shape = SubResource("RectangleShape2D_r2c0j")
 script = ExtResource("3_hhynp")
 size = Vector2(30, 112)
 corner_radius = 0.0
-fill_color = Color(0.62, 0.9430001, 1, 1)
+fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Rectangle2" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/Indie Bucket End4"]
@@ -373,7 +376,109 @@ rotation = 0.7853982
 script = ExtResource("3_hhynp")
 size = Vector2(21, 21)
 corner_radius = 0.0
-fill_color = Color(0.62, 0.9430001, 1, 1)
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Holder" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
+position = Vector2(790, 2447)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/Holder"]
+position = Vector2(-193.72498, -219)
+scale = Vector2(3.855, 0.945)
+shape = SubResource("RectangleShape2D_exmio")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/Holder"]
+position = Vector2(-192, -219)
+script = ExtResource("3_hhynp")
+size = Vector2(76.90784, 20)
+corner_radius = 0.0
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="HolderLow" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
+position = Vector2(732.99994, 2045)
+rotation = -1.5707964
+scale = Vector2(0.76, 0.76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/HolderLow"]
+position = Vector2(-193.72498, -219)
+scale = Vector2(3.855, 0.945)
+shape = SubResource("RectangleShape2D_exmio")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/HolderLow"]
+position = Vector2(-192, -219)
+script = ExtResource("3_hhynp")
+size = Vector2(76.90784, 20)
+corner_radius = 0.0
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Holder2" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
+position = Vector2(791.00006, 2988)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/Holder2"]
+position = Vector2(-193.72498, -219)
+scale = Vector2(3.855, 0.945)
+shape = SubResource("RectangleShape2D_exmio")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/Holder2"]
+position = Vector2(-192, -219)
+script = ExtResource("3_hhynp")
+size = Vector2(76.90784, 20)
+corner_radius = 0.0
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="HolderLow2" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
+position = Vector2(734, 2586)
+rotation = -1.5707964
+scale = Vector2(0.76, 0.76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/HolderLow2"]
+position = Vector2(-193.72498, -219)
+scale = Vector2(3.855, 0.945)
+shape = SubResource("RectangleShape2D_exmio")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/HolderLow2"]
+position = Vector2(-192, -219)
+script = ExtResource("3_hhynp")
+size = Vector2(76.90784, 20)
+corner_radius = 0.0
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Holder3" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
+position = Vector2(239, 3063)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/Holder3"]
+position = Vector2(-193.72498, -219)
+scale = Vector2(3.855, 0.945)
+shape = SubResource("RectangleShape2D_exmio")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/Holder3"]
+position = Vector2(-192, -219)
+script = ExtResource("3_hhynp")
+size = Vector2(76.90784, 20)
+corner_radius = 0.0
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="HolderLow3" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
+position = Vector2(325, 2571)
+rotation = -1.5707964
+scale = Vector2(1.145, 1.145)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/HolderLow3"]
+position = Vector2(-193.72498, -219)
+scale = Vector2(3.855, 0.945)
+shape = SubResource("RectangleShape2D_exmio")
+
+[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/HolderLow3"]
+position = Vector2(-192, -219)
+script = ExtResource("3_hhynp")
+size = Vector2(76.90784, 20)
+corner_radius = 0.0
+fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Ceiling" type="StaticBody2D" parent="BottomRegion/Lower Reaches"]
@@ -761,7 +866,7 @@ shape = SubResource("RectangleShape2D_r2c0j")
 script = ExtResource("3_hhynp")
 size = Vector2(30, 112)
 corner_radius = 0.0
-fill_color = Color(0.62, 0.9430001, 1, 1)
+fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Rectangle2" type="Node2D" parent="ScoreBuckets/Indie Bucket End"]
@@ -770,7 +875,7 @@ rotation = 0.7853982
 script = ExtResource("3_hhynp")
 size = Vector2(21, 21)
 corner_radius = 0.0
-fill_color = Color(0.62, 0.9430001, 1, 1)
+fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Indie Bucket End2" type="StaticBody2D" parent="ScoreBuckets"]
@@ -789,7 +894,7 @@ shape = SubResource("RectangleShape2D_r2c0j")
 script = ExtResource("3_hhynp")
 size = Vector2(30, 112)
 corner_radius = 0.0
-fill_color = Color(0.62, 0.9430001, 1, 1)
+fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Rectangle2" type="Node2D" parent="ScoreBuckets/Indie Bucket End2"]
@@ -798,7 +903,7 @@ rotation = 0.7853982
 script = ExtResource("3_hhynp")
 size = Vector2(21, 21)
 corner_radius = 0.0
-fill_color = Color(0.62, 0.9430001, 1, 1)
+fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="PlayerDisks" type="Node2D" parent="."]
