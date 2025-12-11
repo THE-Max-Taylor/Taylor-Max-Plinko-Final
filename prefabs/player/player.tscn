@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdygi6j0dadwx"]
+[gd_scene load_steps=6 format=3 uid="uid://cdygi6j0dadwx"]
 
 [ext_resource type="Script" uid="uid://biv13wuvk0g1i" path="res://prefabs/player/Player.cs" id="1_rdx4y"]
 [ext_resource type="Script" uid="uid://b375m4oqxfkxv" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="1_sxsrd"]
+[ext_resource type="Script" uid="uid://dxvjrvhwkml4f" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="3_wv1mm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sxsrd"]
 bounce = 0.7
@@ -13,10 +14,116 @@ radius = 15.0
 physics_material_override = SubResource("PhysicsMaterial_sxsrd")
 script = ExtResource("1_rdx4y")
 
-[node name="Ellipse" type="Node2D" parent="."]
-script = ExtResource("1_sxsrd")
-size = Vector2(30, 30)
-metadata/_custom_type_script = "uid://b375m4oqxfkxv"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_o0fae")
+
+[node name="Ellipse" type="Node2D" parent="."]
+position = Vector2(0, -8.152559)
+scale = Vector2(0.43, 0.295)
+script = ExtResource("1_sxsrd")
+size = Vector2(53.727234, 38.247253)
+fill_color = Color(0.1882353, 1, 0.24313726, 1)
+metadata/_custom_type_script = "uid://b375m4oqxfkxv"
+
+[node name="Rectangle" type="Node2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(0.335, 0.58)
+script = ExtResource("3_wv1mm")
+size = Vector2(20, 20.475708)
+corner_radius = 6.37
+fill_color = Color(0.039215688, 1, 0.14117648, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle2" type="Node2D" parent="."]
+position = Vector2(8, -2.0000007)
+rotation = -0.4886922
+scale = Vector2(0.135, 0.015)
+script = ExtResource("3_wv1mm")
+fill_color = Color(0.22745098, 1, 0.15686275, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle4" type="Node2D" parent="."]
+position = Vector2(6, 8)
+rotation = -2.5621433
+scale = Vector2(0.105, -0.01)
+script = ExtResource("3_wv1mm")
+fill_color = Color(0.12941177, 1, 0.09411765, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle5" type="Node2D" parent="."]
+position = Vector2(-5, 9)
+rotation = -4.0264745
+scale = Vector2(0.095, -0.01)
+script = ExtResource("3_wv1mm")
+fill_color = Color(0.25490198, 1, 0.13333334, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle6" type="Node2D" parent="."]
+position = Vector2(-2.9999995, -16)
+rotation = -5.0649457
+scale = Vector2(0.07, -0.01)
+script = ExtResource("3_wv1mm")
+fill_color = Color(0.25490198, 1, 0.13333334, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle7" type="Node2D" parent="."]
+position = Vector2(2.9999995, -15.999998)
+rotation = -4.3336525
+scale = Vector2(0.07, -0.01)
+script = ExtResource("3_wv1mm")
+fill_color = Color(0.25490198, 1, 0.13333334, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle3" type="Node2D" parent="."]
+position = Vector2(-8, -2.405)
+rotation = -2.6179938
+scale = Vector2(0.135, 0.015)
+script = ExtResource("3_wv1mm")
+fill_color = Color(0.28627452, 1, 0.13333334, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Face" type="Node2D" parent="."]
+position = Vector2(0, -8)
+scale = Vector2(0.22, 0.07)
+script = ExtResource("1_sxsrd")
+fill_color = Color(1, 0.86691564, 0.70782185, 1)
+metadata/_custom_type_script = "uid://b375m4oqxfkxv"
+
+[node name="DaMouth" type="Node2D" parent="Face"]
+position = Vector2(0, 14.285715)
+scale = Vector2(0.31, 0.334)
+script = ExtResource("1_sxsrd")
+fill_color = Color(0.63529414, 0.10980392, 0, 1)
+metadata/_custom_type_script = "uid://b375m4oqxfkxv"
+
+[node name="Ellipse" type="Node2D" parent="Face"]
+position = Vector2(14.306, -25.851)
+scale = Vector2(0.1, 0.215)
+script = ExtResource("1_sxsrd")
+fill_color = Color(4.512258e-08, 0.11437591, 0.038650673, 1)
+metadata/_custom_type_script = "uid://b375m4oqxfkxv"
+
+[node name="Ellipse3" type="Node2D" parent="Face"]
+position = Vector2(19.857, -157.143)
+rotation = -0.48694685
+scale = Vector2(0.165, 0.195)
+script = ExtResource("1_sxsrd")
+fill_color = Color(1, 0.98039216, 0.039215688, 1)
+outline_color = Color(1, 0.75686276, 0, 1)
+metadata/_custom_type_script = "uid://b375m4oqxfkxv"
+
+[node name="Ellipse4" type="Node2D" parent="Face"]
+position = Vector2(-18.181822, -157.14284)
+rotation = -2.926917
+scale = Vector2(0.165, 0.195)
+script = ExtResource("1_sxsrd")
+fill_color = Color(1, 0.98039216, 0.039215688, 1)
+outline_color = Color(1, 0.75686276, 0, 1)
+metadata/_custom_type_script = "uid://b375m4oqxfkxv"
+
+[node name="Ellipse2" type="Node2D" parent="Face"]
+position = Vector2(-13.636, -25.426)
+scale = Vector2(0.1, 0.215)
+script = ExtResource("1_sxsrd")
+fill_color = Color(4.512258e-08, 0.11437591, 0.038650673, 1)
+metadata/_custom_type_script = "uid://b375m4oqxfkxv"
