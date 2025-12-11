@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cyy8uc4m1fvy6"]
+[gd_scene load_steps=22 format=3 uid="uid://cyy8uc4m1fvy6"]
 
 [ext_resource type="PackedScene" uid="uid://ca3o3a5grroel" path="res://prefabs/row/row.tscn" id="1_ahvb8"]
 [ext_resource type="Script" uid="uid://c6ids5c1qtj8g" path="res://levels/PlinkoLevel.cs" id="1_lxrb4"]
@@ -39,6 +39,10 @@ size = Vector2(19.338516, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ql3yk"]
 size = Vector2(276.76648, 18.832514)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hve32"]
+bounce = 0.41
+absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hve32"]
 
@@ -308,7 +312,7 @@ PlinkoLevelNode = NodePath("../../../..")
 [node name="BucketDownDeep5" parent="BottomRegion/Lower Reaches/Buckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(196.00005, 2114)
 rotation = 0.30543262
-scale = Vector2(0.67999995, 0.67999995)
+scale = Vector2(0.68, 1.125)
 BucketScore = -1000
 PlinkoLevelNode = NodePath("../../../..")
 
@@ -320,9 +324,9 @@ BucketScore = -1000
 PlinkoLevelNode = NodePath("../../../..")
 
 [node name="Indie Bucket End3" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
-position = Vector2(168.00006, 2097.0002)
+position = Vector2(167, 2102)
 rotation = 0.30543262
-scale = Vector2(0.63, 0.63)
+scale = Vector2(0.645, 1.125)
 physics_material_override = SubResource("PhysicsMaterial_lxrb4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/Indie Bucket End3"]
@@ -600,8 +604,8 @@ position = Vector2(167, 1010.99994)
 scale = Vector2(0.52, 0.52)
 
 [node name="LowerEllipse39" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
-position = Vector2(369, 1839.0001)
-scale = Vector2(0.385, 0.385)
+position = Vector2(423, 2071)
+scale = Vector2(0.255, 0.255)
 
 [node name="LowerEllipse40" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
 position = Vector2(313, 1851)
@@ -620,7 +624,7 @@ position = Vector2(315, 2244)
 scale = Vector2(0.295, 0.295)
 
 [node name="LowerEllipse44" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
-position = Vector2(41, 2205)
+position = Vector2(56.999996, 2211)
 scale = Vector2(0.295, 0.295)
 
 [node name="LowerEllipse38" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
@@ -694,7 +698,7 @@ position = Vector2(-58, 1257.9999)
 scale = Vector2(0.26, 0.26)
 
 [node name="LowerEllipse34" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
-position = Vector2(540, 1725.9999)
+position = Vector2(511, 1710.9999)
 scale = Vector2(0.18, 0.18)
 
 [node name="LowerEllipse24" parent="BottomRegion/Lower Reaches/The Pegs" instance=ExtResource("7_r2c0j")]
@@ -774,8 +778,8 @@ rotation = 0.47996554
 scale = Vector2(0.345, 0.345)
 
 [node name="RowLow12" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
-position = Vector2(238, 1295.0001)
-rotation = -0.7417649
+position = Vector2(221.99995, 1286.9999)
+rotation = -0.91629785
 scale = Vector2(0.405, 0.405)
 
 [node name="RowLow10" parent="BottomRegion/Lower Reaches/LowerRows" instance=ExtResource("8_ql3yk")]
@@ -799,6 +803,7 @@ position = Vector2(45, 2169)
 
 [node name="WallL2" type="StaticBody2D" parent="BottomRegion/Lower Reaches/The Walls"]
 position = Vector2(191, 2025)
+physics_material_override = SubResource("PhysicsMaterial_hve32")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/The Walls/WallL2"]
 position = Vector2(-209.99997, -1.0000534)
@@ -935,6 +940,93 @@ fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Rectangle2" type="Node2D" parent="ScoreBuckets/Indie Bucket End2"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+script = ExtResource("3_hhynp")
+size = Vector2(21, 21)
+corner_radius = 0.0
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Indie Bucket End3" type="StaticBody2D" parent="ScoreBuckets"]
+position = Vector2(566.555, 2151)
+scale = Vector2(0.505, 0.505)
+physics_material_override = SubResource("PhysicsMaterial_lxrb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreBuckets/Indie Bucket End3"]
+shape = SubResource("RectangleShape2D_al8p8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ScoreBuckets/Indie Bucket End3"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+shape = SubResource("RectangleShape2D_r2c0j")
+
+[node name="Rectangle" type="Node2D" parent="ScoreBuckets/Indie Bucket End3"]
+script = ExtResource("3_hhynp")
+size = Vector2(30, 112)
+corner_radius = 0.0
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle2" type="Node2D" parent="ScoreBuckets/Indie Bucket End3"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+script = ExtResource("3_hhynp")
+size = Vector2(21, 21)
+corner_radius = 0.0
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Indie Bucket End4" type="StaticBody2D" parent="ScoreBuckets"]
+position = Vector2(74.29, 2756.75)
+scale = Vector2(0.75, 0.75)
+physics_material_override = SubResource("PhysicsMaterial_lxrb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreBuckets/Indie Bucket End4"]
+shape = SubResource("RectangleShape2D_al8p8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ScoreBuckets/Indie Bucket End4"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+shape = SubResource("RectangleShape2D_r2c0j")
+
+[node name="Rectangle" type="Node2D" parent="ScoreBuckets/Indie Bucket End4"]
+script = ExtResource("3_hhynp")
+size = Vector2(30, 112)
+corner_radius = 0.0
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle2" type="Node2D" parent="ScoreBuckets/Indie Bucket End4"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+script = ExtResource("3_hhynp")
+size = Vector2(21, 21)
+corner_radius = 0.0
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Indie Bucket End5" type="StaticBody2D" parent="ScoreBuckets"]
+position = Vector2(567.59, 2697)
+scale = Vector2(0.505, 0.505)
+physics_material_override = SubResource("PhysicsMaterial_lxrb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreBuckets/Indie Bucket End5"]
+shape = SubResource("RectangleShape2D_al8p8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ScoreBuckets/Indie Bucket End5"]
+position = Vector2(0, -56)
+rotation = 0.7853982
+shape = SubResource("RectangleShape2D_r2c0j")
+
+[node name="Rectangle" type="Node2D" parent="ScoreBuckets/Indie Bucket End5"]
+script = ExtResource("3_hhynp")
+size = Vector2(30, 112)
+corner_radius = 0.0
+fill_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
+
+[node name="Rectangle2" type="Node2D" parent="ScoreBuckets/Indie Bucket End5"]
 position = Vector2(0, -56)
 rotation = 0.7853982
 script = ExtResource("3_hhynp")
