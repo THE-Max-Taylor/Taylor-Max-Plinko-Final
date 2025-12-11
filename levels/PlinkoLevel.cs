@@ -28,6 +28,7 @@ public partial class PlinkoLevel : Node2D
 	[Export]
 	public Label WinTime;
 
+
     //adding random difficulties
     //int[] plinkoDifficulto = [10000, 7000, 3000];
 
@@ -52,7 +53,7 @@ public partial class PlinkoLevel : Node2D
 	public override void _Process(double delta)
 	{
 		// write the score to the UI
-		ScoreValue.Text = $"Ooohgg... careful.. you only have {Score} points left..";
+		
 
 		WinTime.Visible = isWin;
 
@@ -60,6 +61,7 @@ public partial class PlinkoLevel : Node2D
 
         if (Score > 0 && Score < 70001)
 		{
+            ScoreValue.Text = $"Ooohgg... careful.. you only have {Score} points left..";
             RespawnMessage.Visible = EnableRespawn;
             // spawn a new player
             if (Input.IsActionJustPressed("drop_disk") && EnableRespawn)

@@ -310,9 +310,8 @@ BucketScore = -1000
 PlinkoLevelNode = NodePath("../../../..")
 
 [node name="BucketDownDeep2" parent="BottomRegion/Lower Reaches/Buckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
-position = Vector2(40.000008, 2768)
-rotation = 3.1189034
-scale = Vector2(0.955, 1.61)
+position = Vector2(36.985, 2779)
+scale = Vector2(0.775, 1.235)
 BucketScore = -1000
 PlinkoLevelNode = NodePath("../../../..")
 
@@ -398,11 +397,12 @@ fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Holder" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
-position = Vector2(790, 2447)
+position = Vector2(888.495, 2550)
+scale = Vector2(1.43, 1.43)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/Holder"]
 position = Vector2(-193.72498, -219)
-scale = Vector2(3.855, 0.945)
+scale = Vector2(3.795, 0.945)
 shape = SubResource("RectangleShape2D_exmio")
 
 [node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/Holder"]
@@ -414,7 +414,7 @@ fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="HolderLow" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
-position = Vector2(732.99994, 2045)
+position = Vector2(732.99994, 2059)
 rotation = -1.5707964
 scale = Vector2(0.76, 0.76)
 
@@ -466,7 +466,8 @@ fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Holder3" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
-position = Vector2(239, 3063)
+position = Vector2(298.58, 3151)
+scale = Vector2(1.375, 1.375)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/Holder3"]
 position = Vector2(-193.72498, -219)
@@ -474,24 +475,6 @@ scale = Vector2(3.855, 0.945)
 shape = SubResource("RectangleShape2D_exmio")
 
 [node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/Holder3"]
-position = Vector2(-192, -219)
-script = ExtResource("3_hhynp")
-size = Vector2(76.90784, 20)
-corner_radius = 0.0
-fill_color = Color(1, 0, 0, 1)
-metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
-
-[node name="HolderLow3" type="StaticBody2D" parent="BottomRegion/Lower Reaches/Buckets"]
-position = Vector2(325, 2571)
-rotation = -1.5707964
-scale = Vector2(1.145, 1.145)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRegion/Lower Reaches/Buckets/HolderLow3"]
-position = Vector2(-193.72498, -219)
-scale = Vector2(3.855, 0.945)
-shape = SubResource("RectangleShape2D_exmio")
-
-[node name="Rectangle" type="Node2D" parent="BottomRegion/Lower Reaches/Buckets/HolderLow3"]
 position = Vector2(-192, -219)
 script = ExtResource("3_hhynp")
 size = Vector2(76.90784, 20)
@@ -859,7 +842,7 @@ scale = Vector2(0.775, 0.775)
 [node name="Bucket6" parent="BottomRegion/Lower Reaches/LowestBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(539, 3117)
 scale = Vector2(1.22, 0.52)
-BucketScore = 100000
+BucketScore = 500
 PlinkoLevelNode = NodePath("../../../..")
 
 [node name="Bucket10" parent="BottomRegion/Lower Reaches/LowestBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
@@ -871,19 +854,19 @@ PlinkoLevelNode = NodePath("../../../..")
 [node name="Bucket9" parent="BottomRegion/Lower Reaches/LowestBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(165, 3117.0002)
 scale = Vector2(0.97, 0.54)
-BucketScore = 10000
+BucketScore = -3000
 PlinkoLevelNode = NodePath("../../../..")
 
 [node name="Bucket7" parent="BottomRegion/Lower Reaches/LowestBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(55.00003, 3116)
 scale = Vector2(1.22, 0.52)
-BucketScore = 100000
+BucketScore = 500
 PlinkoLevelNode = NodePath("../../../..")
 
 [node name="Bucket8" parent="BottomRegion/Lower Reaches/LowestBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(438.00003, 3117)
 scale = Vector2(0.925, 0.555)
-BucketScore = 100000
+BucketScore = -3000
 PlinkoLevelNode = NodePath("../../../..")
 
 [node name="ScoreBuckets" type="Node2D" parent="."]
@@ -985,35 +968,6 @@ fill_color = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="Rectangle2" type="Node2D" parent="ScoreBuckets/Indie Bucket End3"]
-position = Vector2(0, -56)
-rotation = 0.7853982
-script = ExtResource("3_hhynp")
-size = Vector2(21, 21)
-corner_radius = 0.0
-fill_color = Color(1, 0, 0, 1)
-metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
-
-[node name="Indie Bucket End4" type="StaticBody2D" parent="ScoreBuckets"]
-position = Vector2(74.29, 2756.75)
-scale = Vector2(0.75, 0.75)
-physics_material_override = SubResource("PhysicsMaterial_lxrb4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreBuckets/Indie Bucket End4"]
-shape = SubResource("RectangleShape2D_al8p8")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="ScoreBuckets/Indie Bucket End4"]
-position = Vector2(0, -56)
-rotation = 0.7853982
-shape = SubResource("RectangleShape2D_r2c0j")
-
-[node name="Rectangle" type="Node2D" parent="ScoreBuckets/Indie Bucket End4"]
-script = ExtResource("3_hhynp")
-size = Vector2(30, 112)
-corner_radius = 0.0
-fill_color = Color(1, 0, 0, 1)
-metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
-
-[node name="Rectangle2" type="Node2D" parent="ScoreBuckets/Indie Bucket End4"]
 position = Vector2(0, -56)
 rotation = 0.7853982
 script = ExtResource("3_hhynp")
