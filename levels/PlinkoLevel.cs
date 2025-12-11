@@ -25,6 +25,9 @@ public partial class PlinkoLevel : Node2D
 	[Export]
 	public Player FirstPlayer;
 
+	[Export]
+	public Label WinTime;
+
     //adding random difficulties
     //int[] plinkoDifficulto = [10000, 7000, 3000];
 
@@ -32,14 +35,17 @@ public partial class PlinkoLevel : Node2D
     bool EnableRespawn = false;
 	Vector2 InitialPosition;
 
+	//checks to see if game is wom
+	bool isWin = false;
+
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 
 		RespawnMessage.Hide();
-
-		InitialPosition = FirstPlayer.Position;
+		WinTime.Hide();
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,12 +53,14 @@ public partial class PlinkoLevel : Node2D
 	{
 		// write the score to the UI
 		ScoreValue.Text = $"Ooohgg... careful.. you only have {Score} points left..";
-		
 
-		if (Score > 0 && Score < 70001)
+		WinTime.Visible = isWin;
+
+       
+
+        if (Score > 0 && Score < 70001)
 		{
             RespawnMessage.Visible = EnableRespawn;
-
             // spawn a new player
             if (Input.IsActionJustPressed("drop_disk") && EnableRespawn)
 			{
@@ -76,6 +84,16 @@ public partial class PlinkoLevel : Node2D
 		if (Score > 70001)
 		{
             ScoreValue.Text = "Sorr- Yo, what? Wait what? YOU WIN!! NICE. NICE.";
+
+			isWin = true;
+            SpawnNewPlayer();
+            
+            if (Input.IsActionPressed("drop_disk"))
+            {
+                ScoreValue.Text = "Stop Playing. You Won. Can't you just take the win.";
+
+				
+            }
         }
 
     }
