@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using static System.Formats.Asn1.AsnWriter;
 
 public partial class Player : RigidBody2D
 {
@@ -38,14 +39,6 @@ public partial class Player : RigidBody2D
 
 		}
 
-		if (Position.Y >= 40)
-		{
-			//move player if A button is pressed
-			if (Input.IsActionJustPressed("move-left"))
-			{            
-               
-            }
-		}
 
             // snap camera Y position to my Y position ONLY if I'm not dead
             if (!Dead)

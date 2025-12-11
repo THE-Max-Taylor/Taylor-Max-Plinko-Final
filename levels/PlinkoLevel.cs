@@ -87,12 +87,12 @@ public partial class PlinkoLevel : Node2D
 
 			isWin = true;
             SpawnNewPlayer();
-            
+           
+
             if (Input.IsActionPressed("drop_disk"))
             {
-                ScoreValue.Text = "Stop Playing. You Won. Can't you just take the win.";
-
-				
+                ScoreValue.Text = "TOO MANY YOUS!! IT'S GONNA BLOW!!";
+		
             }
         }
 

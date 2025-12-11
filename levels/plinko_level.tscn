@@ -86,18 +86,16 @@ theme_override_constants/outline_size = 4
 text = "Left Click to Respawn"
 
 [node name="WinTime" type="Label" parent="CanvasLayer"]
-offset_left = 117.0
-offset_top = 304.00003
-offset_right = 269.21002
-offset_bottom = 405.00003
+offset_left = 76.0
+offset_top = 106.00003
+offset_right = 247.0
+offset_bottom = 207.00003
 rotation = -0.13788101
 scale = Vector2(2.63, 2.63)
 theme_override_colors/font_color = Color(1, 0.64819175, 0.9843734, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-text = "YOU WON!! WHAT!!
-YOUR SISTERS ARE 
-COMING TO 
-CELEBRATE NOW!!"
+text = "YOU WON!! CLICK TO
+SEND IN: THE HORDES"
 horizontal_alignment = 1
 
 [node name="Pegs" type="Node2D" parent="."]
